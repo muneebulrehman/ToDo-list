@@ -3,16 +3,27 @@ import './style.css';
 const list = document.querySelector('.list');
 const num = document.querySelector('.number');
 
-const arr = [
-	{ description: 'Book 1', completed: false, index: 0 },
-	{ description: 'Book 2', completed: true, index: 1 },
-	{ description: 'Book 3', completed: false, index: 2 },
+const arr = [{
+  description: 'Book 1',
+  completed: false,
+  index: 0,
+},
+{
+  description: 'Book 2',
+  completed: true,
+  index: 1,
+},
+{
+  description: 'Book 3',
+  completed: false,
+  index: 2,
+},
 ];
 
 const render = () => {
-	for (const item of arr) {
-		const checked = item.completed ? 'checked' : '';
-		/* eslint-disable */
+  /* eslint-disable */
+  for (const item of arr) {
+    const checked = item.completed ? 'checked' : '';
 		const html = `<div class="item">
 						<div class="left">
 							<input type="checkbox" class="checkbox" ${checked} />
@@ -36,9 +47,9 @@ const render = () => {
 						</button>
 					</div>`;
 		/* eslint-enable */
-		list.insertAdjacentHTML('beforeend', html);
-	}
-	num.textContent = arr.length;
+    list.insertAdjacentHTML('beforeend', html);
+  }
+  num.textContent = arr.length;
 };
 
 render();
