@@ -7,4 +7,4 @@ const list = document.querySelector('.list');
 export { list };
 // task.getTasks();
 newTask.getTasks();
-// deleteItem();
+deleteItem();

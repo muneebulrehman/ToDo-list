@@ -1,6 +1,5 @@
 import { newTask } from './task.js';
 import { list } from '../index.js';
-import deleteItem from './deletingTask.js';
 
 const renderList = () => {
 	list.innerHTML = '';
@@ -31,7 +30,6 @@ const renderList = () => {
 					</div>`;
 			list.insertAdjacentHTML('beforeend', html);
 		});
-		deleteItem();
 	}
 };
 
