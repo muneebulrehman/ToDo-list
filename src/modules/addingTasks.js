@@ -1,4 +1,5 @@
 import { tasks, getTasks, setTask } from './task.js';
+import { renderList } from './renderView.js';
 
 class EachTask {
 	constructor(description, completed, index) {
@@ -9,11 +10,19 @@ class EachTask {
 }
 const addBtn = document.querySelector('.add');
 const input = document.querySelector('.add-here');
+const form = document.querySelector('.form');
 
-addBtn.addEventListener('click', () => {
-	const desc = input.value;
-	if (!desc) return;
-	const task = new EachTask(desc, false, tasks.length);
-	tasks.push(task);
-	setTask();
+[addBtn, form].forEach((el) => {
+	const event = el.classList.contains('add') ? 'click' : 'submit';
+	el.addEventListener(event, (e) => {
+		e.preventDefault();
+		const desc = input.value;
+		if (!desc) return;
+		const task = new EachTask(desc, false, tasks.length);
+		tasks.push(task);
+		setTask();
+		renderList();
+		input.value = '';
+		input.focus();
+	});
 });

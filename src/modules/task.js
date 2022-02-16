@@ -1,5 +1,5 @@
 // let num = 0;
-const tasks = [];
+let tasks = [];
 
 // const getNum = () => {
 // 	if (localStorage.getItem('num'))
