@@ -1,13 +1,20 @@
-import { newTask } from './task.js';
-import { list, number } from '../index.js';
+/* eslint-disable */
+import {
+  newTask,
+} from './task.js';
+import {
+  list,
+  number,
+} from '../index.js';
 import deleteItem from './deletingTask.js';
+/* eslint-enable */
 
 const renderList = () => {
-	list.innerHTML = '';
-	if (newTask.tasks.length > 0) {
-		newTask.tasks.forEach((task) => {
-			const checked = task.completed ? 'checked' : '';
-			const html = `<div class="item" data-id="${task.index}">
+  list.innerHTML = '';
+  if (newTask.tasks.length > 0) {
+    newTask.tasks.forEach((task) => {
+      const checked = task.completed ? 'checked' : '';
+      const html = `<div class="item" data-id="${task.index}">
 						<div class="left">
 							<input type="checkbox" class="checkbox" ${checked} data-id="${task.index}" />
 							<span class="content" data-id="${task.index}">${task.description}</span>
@@ -36,10 +43,13 @@ const renderList = () => {
 							</svg>
 						</button>
 					</div>`;
-			list.insertAdjacentHTML('beforeend', html);
-		});
-	}
-	number.innerHTML = newTask.tasks.length;
+      list.insertAdjacentHTML('beforeend', html);
+    });
+  }
+  number.innerHTML = newTask.tasks.length;
 };
-
-export { renderList };
+/* eslint-disable */
+export {
+  renderList,
+};
+/* eslint-enable */

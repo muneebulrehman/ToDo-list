@@ -1,25 +1,35 @@
-import { renderList } from './renderView.js';
+/* eslint-disable */
+import {
+  renderList,
+} from './renderView.js';
+/* eslint-enable */
 class Task {
 	tasks = [];
+
 	getTasks = () => {
-		if (localStorage.getItem('tasks'))
-			this.tasks = JSON.parse(localStorage.getItem('tasks'));
+	  if (localStorage.getItem('tasks')) this.tasks = JSON.parse(localStorage.getItem('tasks'));
 	};
 
 	setTask = () => {
-		localStorage.setItem('tasks', JSON.stringify(this.tasks));
-		this.getTasks();
+	  localStorage.setItem('tasks', JSON.stringify(this.tasks));
+	  this.getTasks();
 	};
+
 	resetId = (num) => {
-		this.tasks.forEach((task) => {
-			if (task.index > num) task.index--;
-		});
-		this.setTask();
-		this.getTasks();
+	  /* eslint-disable */
+	  this.tasks.forEach((task) => {
+	    if (task.index > num) task.index--;
+	  });
+	  this.setTask();
+	  this.getTasks();
 		renderList();
+		/* eslint-enable */
 	};
 }
 
 const newTask = new Task();
-
-export { newTask };
+/* eslint-disable */
+export {
+  newTask,
+};
+/* eslint-enable */
