@@ -1,9 +1,10 @@
 import './style.css';
-import * as task from './modules/task.js';
+import { newTask } from './modules/task.js';
 import * as addingTask from './modules/addingTasks.js';
-import { renderList } from './modules/renderView.js';
-
+// import { renderList } from './modules/renderView.js';
+import deleteItem from './modules/deletingTask.js';
 const list = document.querySelector('.list');
 export { list };
-task.getTasks();
-renderList();
+// task.getTasks();
+newTask.getTasks();
+// deleteItem();

@@ -1,4 +1,4 @@
-import { tasks, getTasks, setTask } from './task.js';
+import { newTask } from './task.js';
 import { renderList } from './renderView.js';
 
 class EachTask {
@@ -18,11 +18,11 @@ const form = document.querySelector('.form');
 		e.preventDefault();
 		const desc = input.value;
 		if (!desc) return;
-		const task = new EachTask(desc, false, tasks.length);
-		tasks.push(task);
-		setTask();
-		renderList();
+		const task = new EachTask(desc, false, newTask.tasks.length + 1);
+		newTask.tasks.push(task);
+		newTask.setTask();
 		input.value = '';
 		input.focus();
+		renderList();
 	});
 });
