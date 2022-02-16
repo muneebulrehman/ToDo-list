@@ -1,13 +1,15 @@
 import { newTask } from './task.js';
 import { renderList } from './renderView.js';
+import deleteItem from './deletingTask.js';
 
-class EachTask {
+export default class EachTask {
 	constructor(description, completed, index) {
 		this.description = description;
 		this.completed = completed;
 		this.index = index;
 	}
 }
+
 const addBtn = document.querySelector('.add');
 const input = document.querySelector('.add-here');
 const form = document.querySelector('.form');
@@ -24,5 +26,6 @@ const form = document.querySelector('.form');
 		input.value = '';
 		input.focus();
 		renderList();
+		location.reload();
 	});
 });

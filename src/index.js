@@ -1,9 +1,14 @@
 import './style.css';
 import { newTask } from './modules/task.js';
-import * as addingTask from './modules/addingTasks.js';
 import deleteItem from './modules/deletingTask.js';
+import EachTask from './modules/addingTasks.js';
+import { renderList } from './modules/renderView.js';
+
 const list = document.querySelector('.list');
 const number = document.querySelector('.number');
+const input = document.querySelector('.add-here');
+input.focus();
 export { list, number };
 newTask.getTasks();
+renderList();
 deleteItem();

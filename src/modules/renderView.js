@@ -1,5 +1,6 @@
 import { newTask } from './task.js';
 import { list, number } from '../index.js';
+import deleteItem from './deletingTask.js';
 
 const renderList = () => {
 	list.innerHTML = '';
