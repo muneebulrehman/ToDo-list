@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+}
+
 .main {
   width: 50%;
   margin: 5rem auto;
@@ -48,18 +52,23 @@ h2 {
   border-radius: 50%;
 }
 
-.form {
+.form-container {
+  height: 3.5rem;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  align-items: center;
+  padding: 0 1rem;
   border-bottom: 1px solid darkgray;
+}
+
+.form {
+  width: 85%;
 }
 
 .add-here {
   border: none;
-  width: 85%;
+  width: 100%;
   font-size: 1.25rem;
-  text-transform: capitalize;
 }
 
 svg {
@@ -85,6 +94,7 @@ svg {
   align-items: center;
   padding: 0.5rem 1rem;
   border-bottom: 1px solid darkgray;
+  position: relative;
 }
 
 .left {
@@ -130,4 +140,19 @@ svg {
 
 .clear-btn:hover {
   color: red;
+}
+
+.change-text {
+  position: absolute;
+  width: 60%;
+  left: 7%;
+  outline: none;
+  height: 2.5rem;
+  background-color: lightyellow;
+  border: none;
+  font-size: 1.25rem;
+}
+
+.change-text:focus {
+  outline: none;
 }

@@ -28,7 +28,11 @@ Browser. Any modern browser should do the job.
 
 ### Setup
 
-Just download or clone the repo and run the index.html file.
+Just download or clone the repo.
+- Open with your favourite editor.
+- Open terminal.
+- Run npm install.
+- Run npm start.
 
 ## Author
 
