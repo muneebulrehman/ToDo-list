@@ -74,7 +74,23 @@ const deleteItem = () => {
 		document.body.addEventListener('click', (e) => {
 			resetBg();
 			if (e.target.classList.contains('content')) {
+				resetChangingEl();
 				const content = e.target;
+				const numId = +content.dataset.id;
+				const overRide = document.getElementById(numId);
+				content.hidden = true;
+				overRide.hidden = false;
+				overRide.focus();
+				overRide.addEventListener('change', () => {
+					console.log('i am changing');
+					const value = overRide.value;
+					newTask.tasks.find((el) => {
+						console.log(el, numId);
+						if (el.index === numId) el.description = value;
+					});
+					newTask.setTask();
+					resetChangingEl();
+				});
 			}
 			if (e.target.closest('.item')) {
 				const targetEl = e.target.closest('.item');
@@ -90,7 +106,7 @@ const deleteItem = () => {
 					delBtn.classList.toggle('hidden');
 					dotBtn.classList.toggle('hidden');
 				}
-			}
+			} else resetChangingEl();
 		});
 	}
 };
@@ -110,6 +126,7 @@ const resetBg = () => {
 	let items = document.querySelectorAll('.item');
 	const deleteBtns = document.querySelectorAll('.delete');
 	const threeDots = document.querySelectorAll('.three-dots');
+
 	items.forEach((el) => {
 		el.style.backgroundColor = 'transparent';
 	});
@@ -118,5 +135,16 @@ const resetBg = () => {
 	});
 	threeDots.forEach((el) => {
 		el.classList.remove('hidden');
+	});
+};
+
+const resetChangingEl = () => {
+	const content = document.querySelectorAll('.content');
+	const changeText = document.querySelectorAll('.change-text');
+	content.forEach((el) => {
+		el.hidden = false;
+	});
+	changeText.forEach((el) => {
+		el.hidden = true;
 	});
 };

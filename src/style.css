@@ -92,6 +92,7 @@ svg {
 	align-items: center;
 	padding: 0.5rem 1rem;
 	border-bottom: 1px solid darkgray;
+	position: relative;
 }
 
 .left {
@@ -137,4 +138,18 @@ svg {
 
 .clear-btn:hover {
 	color: red;
+}
+
+.change-text {
+	position: absolute;
+	width: 60%;
+	left: 7%;
+	outline: none;
+	height: 2.5rem;
+	background-color: lightyellow;
+	border: none;
+	font-size: 1.25rem;
+}
+.change-text:focus {
+	outline: none;
 }

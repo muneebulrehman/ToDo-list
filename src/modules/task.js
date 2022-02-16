@@ -28,7 +28,7 @@ class Task {
 
 	setTask = () => {
 		localStorage.setItem('tasks', JSON.stringify(this.tasks));
-		renderList();
+		this.getTasks();
 	};
 	resetId = (num) => {
 		this.tasks.forEach((task) => {

@@ -1,5 +1,5 @@
 import { newTask } from './task.js';
-import { list } from '../index.js';
+import { list, number } from '../index.js';
 
 const renderList = () => {
 	list.innerHTML = '';
@@ -10,6 +10,13 @@ const renderList = () => {
 						<div class="left">
 							<input type="checkbox" class="checkbox" ${checked} data-id="${task.index}" />
 							<span class="content" data-id="${task.index}">${task.description}</span>
+							<input
+							class="change-text"
+							type="text"
+							value="${task.description}"
+							id="${task.index}"
+							hidden
+						/>
 						</div>
 						<button type="button" class="icon three-dots" data-id="${task.index}" >
 							<svg data-id="${task.index}" class="dot-svg" style="width: 24px; height: 24px" viewBox="0 0 24 24">
@@ -31,6 +38,7 @@ const renderList = () => {
 			list.insertAdjacentHTML('beforeend', html);
 		});
 	}
+	number.innerHTML = newTask.tasks.length;
 };
 
 export { renderList };
