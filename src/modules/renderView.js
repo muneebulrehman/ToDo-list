@@ -1,12 +1,15 @@
 /* eslint-disable */
 import {
-  newTask,
+	newTask
 } from './task.js';
 import {
-  list,
-  number,
+	list,
+	number
 } from '../index.js';
 import deleteItem from './deletingTask.js';
+import {
+	tickMark
+} from './tickMark.js';
 /* eslint-enable */
 
 const renderList = () => {
@@ -14,10 +17,11 @@ const renderList = () => {
   if (newTask.tasks.length > 0) {
     newTask.tasks.forEach((task) => {
       const checked = task.completed ? 'checked' : '';
+      const renderLine = task.completed ? 'line-through' : '';
       const html = `<div class="item" data-id="${task.index}">
 						<div class="left">
 							<input type="checkbox" class="checkbox" ${checked} data-id="${task.index}" />
-							<span class="content" data-id="${task.index}">${task.description}</span>
+							<span class="content ${renderLine}" data-id="${task.index}">${task.description}</span>
 							<input
 							class="change-text"
 							type="text"
@@ -50,6 +54,6 @@ const renderList = () => {
 };
 /* eslint-disable */
 export {
-  renderList,
+	renderList
 };
 /* eslint-enable */

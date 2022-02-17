@@ -156,3 +156,7 @@ svg {
 .change-text:focus {
   outline: none;
 }
+
+.line-through {
+  text-decoration: line-through;
+}
