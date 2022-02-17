@@ -59,23 +59,25 @@ const deleteItem = () => {
         overRide.hidden = false;
         overRide.focus();
         overRide.addEventListener('change', () => {
-          const { value } = overRide;
+          const {
+            value,
+          } = overRide;
           /* eslint-disable */
           newTask.tasks.find((el) => {
-			  if (el.index === numId) el.description = value;
+            if (el.index === numId) el.description = value;
           });
           newTask.setTask();
           resetChangingEl();
           renderList();
-		});
-		  /* eslint-enable */
+        });
+        /* eslint-enable */
       }
       if (e.target.closest('.item')) {
         const targetEl = e.target.closest('.item');
         if (
           !e.target.parentElement.classList.contains('three-dots')
-					&& !e.target.classList.contains('checkbox')
-					&& !e.target.classList.contains('dot-svg')
+          && !e.target.classList.contains('checkbox')
+          && !e.target.classList.contains('dot-svg')
         ) {
           targetEl.style.backgroundColor = 'lightyellow';
           const delBtn = targetEl.lastElementChild;

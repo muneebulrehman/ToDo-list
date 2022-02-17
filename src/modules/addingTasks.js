@@ -30,9 +30,9 @@ const form = document.querySelector('.form');
     newTask.setTask();
     input.value = '';
     input.focus();
-	  renderList();
-	  /* eslint-disable */
-	  location.reload();
-	  /* eslint-disable */
+    renderList();
+    /* eslint-disable */
+    location.reload();
+    /* eslint-disable */
   });
 });

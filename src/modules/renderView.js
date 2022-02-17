@@ -1,17 +1,24 @@
 /* eslint-disable */
-import { newTask } from './task.js';
-import { list, number } from '../index.js';
+import {
+	newTask
+} from './task.js';
+import {
+	list,
+	number
+} from '../index.js';
 import deleteItem from './deletingTask.js';
-import { tickMark } from './tickMark.js';
+import {
+	tickMark
+} from './tickMark.js';
 /* eslint-enable */
 
 const renderList = () => {
-	list.innerHTML = '';
-	if (newTask.tasks.length > 0) {
-		newTask.tasks.forEach((task) => {
-			const checked = task.completed ? 'checked' : '';
-			const renderLine = task.completed ? 'line-through' : '';
-			const html = `<div class="item" data-id="${task.index}">
+  list.innerHTML = '';
+  if (newTask.tasks.length > 0) {
+    newTask.tasks.forEach((task) => {
+      const checked = task.completed ? 'checked' : '';
+      const renderLine = task.completed ? 'line-through' : '';
+      const html = `<div class="item" data-id="${task.index}">
 						<div class="left">
 							<input type="checkbox" class="checkbox" ${checked} data-id="${task.index}" />
 							<span class="content ${renderLine}" data-id="${task.index}">${task.description}</span>
@@ -40,11 +47,13 @@ const renderList = () => {
 							</svg>
 						</button>
 					</div>`;
-			list.insertAdjacentHTML('beforeend', html);
-		});
-	}
-	number.innerHTML = newTask.tasks.length;
+      list.insertAdjacentHTML('beforeend', html);
+    });
+  }
+  number.innerHTML = newTask.tasks.length;
 };
 /* eslint-disable */
-export { renderList };
+export {
+	renderList
+};
 /* eslint-enable */
