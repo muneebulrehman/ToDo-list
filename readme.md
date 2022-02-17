@@ -4,6 +4,8 @@
 
 Additional description about the project and its features.
 -Phase 1. No features added yet.
+-Phase 2. Added CRUD features.
+-Phase 3. Added the functionality to tick mark completed tasks. Also added the functionality to remove all completed tasks.
 
 # Getting Started
 
@@ -17,6 +19,7 @@ To get a local copy up and running follow these simple steps.
 - Major languages
 - HTML and CSS
 - Mostly JavaScript
+- WebPack used
 
 ## Getting Started
 
