@@ -16,7 +16,6 @@ To get a local copy up and running follow these simple steps.
 
 ## Built With
 
-- Major languages
 - HTML and CSS
 - Mostly JavaScript
 - WebPack used
@@ -25,10 +24,6 @@ To get a local copy up and running follow these simple steps.
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
-Browser. Any modern browser should do the job.
-
 ### Setup
 
 Just download or clone the repo.
@@ -36,6 +31,10 @@ Just download or clone the repo.
 - Open terminal.
 - Run npm install.
 - Run npm start.
+
+### Prerequisites
+
+Browser. Any modern browser should do the job.
 
 ## Author
 
